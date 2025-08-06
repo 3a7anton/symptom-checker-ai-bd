@@ -1,0 +1,1075 @@
+/* Symptom Checker Styles */
+.symptom-checker {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.checker-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.checker-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.checker-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.checker-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Input Section */
+.input-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.input-section::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4ecdc4, #44a08d, #ff6b6b, #ee5a24);
+  background-size: 300% 300%;
+  border-radius: 17px;
+  z-index: -1;
+  animation: gradientShift 6s ease infinite;
+  opacity: 0.3;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.symptom-input {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: stretch;
+}
+
+.symptom-input input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.symptom-input input::placeholder {
+  color: #666;
+  font-weight: 400;
+}
+
+.symptom-input input:focus {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.3);
+  border: 2px solid #4ecdc4;
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+}
+
+.symptom-input select {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%234ecdc4' viewBox='0 0 16 16'%3e%3cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 16px 12px;
+  padding-right: 2.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.symptom-input select:hover {
+  background: linear-gradient(145deg, #f8f8f8, #e8e8e8);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.symptom-input select:focus {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.3);
+  border: 2px solid #4ecdc4;
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+}
+
+.symptom-input select:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.symptom-input select option {
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  color: #2c3e50;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  margin: 2px 0;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.symptom-input select option:hover,
+.symptom-input select option:focus {
+  background: linear-gradient(145deg, #4ecdc4, #44a08d);
+  color: white;
+  font-weight: 700;
+}
+
+.symptom-input select option:checked {
+  background: linear-gradient(145deg, #4ecdc4, #44a08d);
+  color: white;
+  font-weight: 700;
+}
+
+/* For better cross-browser support */
+.symptom-input select optgroup {
+  background: #f0f0f0;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Custom dropdown styling for different severity levels */
+.symptom-input select option[value="mild"] {
+  background: linear-gradient(145deg, #e8f5e8, #d4edda);
+  color: #2d5a2d;
+  border-left: 3px solid #4caf50;
+}
+
+.symptom-input select option[value="moderate"] {
+  background: linear-gradient(145deg, #fff3cd, #ffeaa7);
+  color: #856404;
+  border-left: 3px solid #ffc107;
+}
+
+.symptom-input select option[value="severe"] {
+  background: linear-gradient(145deg, #f8d7da, #f5c6cb);
+  color: #721c24;
+  border-left: 3px solid #f44336;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .symptom-input select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-width: 100px;
+    padding: 1rem;
+  }
+  
+  .symptom-input select option {
+    font-size: 16px;
+    padding: 1rem;
+  }
+}
+
+.add-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(238, 90, 36, 0.3);
+  min-width: 80px;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(238, 90, 36, 0.4);
+  background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+}
+
+.add-btn:active {
+  transform: translateY(-1px);
+}
+
+.quick-symptoms h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.symptom-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.symptom-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.symptom-tag:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Symptoms Section */
+.symptoms-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.symptoms-section h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.symptoms-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 2rem;
+  padding-right: 0.5rem;
+}
+
+.symptoms-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.symptoms-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.symptoms-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.symptom-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.severity-mild {
+  background: rgba(76, 175, 80, 0.3);
+  border-left: 4px solid #4caf50;
+}
+
+.severity-moderate {
+  background: rgba(255, 193, 7, 0.3);
+  border-left: 4px solid #ffc107;
+}
+
+.severity-severe {
+  background: rgba(244, 67, 54, 0.3);
+  border-left: 4px solid #f44336;
+}
+
+.symptom-item:hover {
+  transform: translateX(5px);
+}
+
+.symptom-name {
+  font-weight: 500;
+  flex: 1;
+}
+
+.symptom-severity {
+  padding: 0.2rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+.severity-mild .symptom-severity {
+  background: rgba(76, 175, 80, 0.8);
+}
+
+.severity-moderate .symptom-severity {
+  background: rgba(255, 193, 7, 0.8);
+  color: #333;
+}
+
+.severity-severe .symptom-severity {
+  background: rgba(244, 67, 54, 0.8);
+}
+
+.remove-btn {
+  background: rgba(244, 67, 54, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: rgba(244, 67, 54, 1);
+  transform: scale(1.1);
+}
+
+.analyze-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(68, 160, 141, 0.4);
+}
+
+.analyze-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Results Section */
+.results-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-top: 2rem;
+}
+
+.results-section h3 {
+  margin-bottom: 1.5rem;
+  color: #4ecdc4;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.analysis-summary,
+.urgency-level,
+.possible-conditions,
+.recommendations,
+.health-tips,
+.disclaimer {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border-left: 4px solid #4ecdc4;
+}
+
+.analysis-summary h4,
+.urgency-level h4,
+.possible-conditions h4,
+.recommendations h4,
+.health-tips h4 {
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.analysis-summary p {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.urgency-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.urgency-low {
+  background: rgba(76, 175, 80, 0.8);
+  color: white;
+}
+
+.urgency-medium {
+  background: rgba(255, 193, 7, 0.8);
+  color: #333;
+}
+
+.urgency-high {
+  background: rgba(255, 152, 0, 0.8);
+  color: white;
+}
+
+.urgency-emergency {
+  background: rgba(244, 67, 54, 0.8);
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.possible-conditions ul,
+.recommendations ul,
+.health-tips ul {
+  list-style: none;
+  padding: 0;
+}
+
+.possible-conditions li,
+.recommendations li,
+.health-tips li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.possible-conditions li:before {
+  content: '🔍';
+  position: absolute;
+  left: 0;
+}
+
+.recommendations li:before {
+  content: '💡';
+  position: absolute;
+  left: 0;
+}
+
+.health-tips li:before {
+  content: '🌟';
+  position: absolute;
+  left: 0;
+}
+
+.possible-conditions li:last-child,
+.recommendations li:last-child,
+.health-tips li:last-child {
+  border-bottom: none;
+}
+
+.disclaimer {
+  background: rgba(255, 193, 7, 0.2);
+  border-left-color: #ffc107;
+}
+
+.disclaimer p {
+  margin: 0;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tips-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, #9c27b0, #673ab7);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.tips-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+}
+
+.tips-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Error Section */
+.error-section {
+  background: rgba(244, 67, 54, 0.2);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #f44336;
+  margin-top: 2rem;
+}
+
+.error-section h3 {
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.error-text {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.results-text {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  border-left: 4px solid #4ecdc4;
+}
+
+/* Demo Mode Styles */
+.demo-banner {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  text-align: center;
+  animation: pulse 3s infinite;
+}
+
+.demo-banner p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.demo-expired {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.signup-prompt {
+  background: rgba(78, 205, 196, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px dashed #4ecdc4;
+  margin-top: 2rem;
+}
+
+.signup-prompt p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.signup-btn,
+.signup-prompt-btn {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.signup-btn:hover,
+.signup-prompt-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+  background: linear-gradient(45deg, #44a08d, #4ecdc4);
+}
+
+/* Enhanced analyze button with demo states */
+.analyze-btn.demo-expired {
+  background: linear-gradient(45deg, #9b59b6, #8e44ad);
+  animation: pulse 2s infinite;
+}
+
+.analyze-btn.demo-expired:hover {
+  background: linear-gradient(45deg, #8e44ad, #9b59b6);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+}
+@media (max-width: 768px) {
+  .symptom-checker {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .checker-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .checker-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .checker-header p {
+    font-size: 1rem;
+  }
+
+  .symptom-input {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .symptom-input input,
+  .symptom-input select {
+    width: 100%;
+    font-size: 16px; /* Prevent iOS zoom */
+    padding: 1rem;
+  }
+
+  .add-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .symptom-tags {
+    justify-content: center;
+  }
+
+  .symptom-tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .input-section,
+  .symptoms-section {
+    padding: 1.5rem;
+  }
+
+  .symptoms-list {
+    max-height: 250px;
+  }
+
+  .results-section {
+    padding: 1.5rem;
+  }
+
+  .results-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .analysis-summary,
+  .urgency-level,
+  .possible-conditions,
+  .recommendations,
+  .health-tips,
+  .disclaimer {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .analysis-summary h4,
+  .urgency-level h4,
+  .possible-conditions h4,
+  .recommendations h4,
+  .health-tips h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .demo-banner {
+    padding: 0.8rem 1rem;
+    margin-top: 1rem;
+  }
+
+  .demo-banner p {
+    font-size: 0.95rem;
+  }
+
+  .signup-prompt {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .signup-prompt p {
+    font-size: 1rem;
+  }
+
+  .signup-btn,
+  .signup-prompt-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .symptom-checker {
+    margin: 0.25rem;
+    padding: 0.75rem;
+    border-radius: 15px;
+  }
+
+  .checker-header h2 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .checker-header p {
+    font-size: 0.9rem;
+  }
+
+  .input-section,
+  .symptoms-section {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .symptom-input {
+    gap: 0.6rem;
+  }
+
+  .symptom-input input,
+  .symptom-input select {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .add-btn {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .symptom-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .symptoms-list {
+    max-height: 200px;
+  }
+
+  .symptom-item {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+  }
+
+  .symptom-name {
+    font-size: 0.9rem;
+  }
+
+  .symptom-severity {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    margin-right: 0.5rem;
+  }
+
+  .remove-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 1rem;
+  }
+
+  .analyze-btn,
+  .tips-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .results-section {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .results-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .analysis-summary,
+  .urgency-level,
+  .possible-conditions,
+  .recommendations,
+  .health-tips,
+  .disclaimer {
+    padding: 0.6rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .analysis-summary h4,
+  .urgency-level h4,
+  .possible-conditions h4,
+  .recommendations h4,
+  .health-tips h4 {
+    font-size: 0.95rem;
+  }
+
+  .analysis-summary p,
+  .possible-conditions li,
+  .recommendations li,
+  .health-tips li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .urgency-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .demo-banner {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+  }
+
+  .demo-banner p {
+    font-size: 0.85rem;
+  }
+
+  .signup-prompt {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .signup-btn,
+  .signup-prompt-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  .error-section {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .error-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .error-text {
+    font-size: 0.9rem;
+  }
+
+  .results-text {
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Ultra-wide mobile landscape optimization */
+@media (max-width: 896px) and (orientation: landscape) and (max-height: 414px) {
+  .symptom-checker {
+    padding: 0.5rem;
+  }
+
+  .checker-content {
+    gap: 1rem;
+  }
+
+  .checker-header {
+    margin-bottom: 1rem;
+  }
+
+  .checker-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .results-section {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+}
+
+/* Very small screen optimization (< 320px) */
+@media (max-width: 320px) {
+  .symptom-checker {
+    margin: 0.125rem;
+    padding: 0.5rem;
+  }
+
+  .checker-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .input-section,
+  .symptoms-section,
+  .results-section {
+    padding: 0.75rem;
+  }
+
+  .symptom-input input,
+  .symptom-input select {
+    padding: 0.7rem;
+    font-size: 15px;
+  }
+
+  .add-btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .symptom-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .analyze-btn,
+  .tips-btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Touch-friendly hover states for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .symptom-tag:hover,
+  .add-btn:hover,
+  .analyze-btn:hover,
+  .tips-btn:hover,
+  .signup-btn:hover,
+  .signup-prompt-btn:hover {
+    transform: none;
+  }
+
+  /* Active states for better mobile feedback */
+  .add-btn:active {
+    transform: scale(0.95);
+  }
+
+  .analyze-btn:active,
+  .tips-btn:active {
+    transform: scale(0.95);
+  }
+
+  .symptom-tag:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Prevent text selection on interactive elements for mobile */
+@media (max-width: 768px) {
+  .symptom-tag,
+  .add-btn,
+  .analyze-btn,
+  .tips-btn,
+  .signup-btn,
+  .signup-prompt-btn,
+  .remove-btn {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading {
+  animation: pulse 2s infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Glassmorphism effect enhancement */
+.symptom-checker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Loading states for lazy components */
+.user-profile-loading,
+.chat-history-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1rem 0;
+}

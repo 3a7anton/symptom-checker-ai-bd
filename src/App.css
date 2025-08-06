@@ -1,0 +1,247 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+  }
+}
+
+.app-header {
+  margin-bottom: 3rem;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+/* Mobile responsive header */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 1.5rem 0.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+  }
+}
+
+.app-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #4ecdc4, #44a08d, #667eea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Mobile responsive titles */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+}
+
+.app-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .app-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 0 0.5rem;
+  }
+}
+
+.auth-section {
+  margin: 4rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+  .auth-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-section {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 15px;
+  }
+}
+
+/* Demo and main app specific styles */
+.demo-app, .main-app {
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.demo-header, .main-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.demo-header h1, .main-header h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .demo-header h1, .main-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-header h1, .main-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+}
+
+.demo-header p, .main-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .demo-header p, .main-header p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-header p, .main-header p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 480px) {
+  .back-btn {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-5px);
+}
+
+@media (max-width: 480px) {
+  .back-btn:hover {
+    transform: none;
+  }
+}
+
+.demo-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .demo-info {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
+
+.demo-expired {
+  background: rgba(244, 67, 54, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.signup-prompt-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .signup-prompt-btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.signup-prompt-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+}
