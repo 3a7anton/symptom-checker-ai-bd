@@ -19,7 +19,7 @@ We take the security of AI Symptom Checker seriously. If you believe you have fo
 
 Instead, please report them via one of the following methods:
 
-1. **Email**: Send details to the project maintainer at [security email]
+1. **Email**: Send details to the project maintainer at [3a7anton@gmail.com](mailto:3a7anton@gmail.com)
 2. **GitHub Security Advisory**: Use the "Report a vulnerability" feature in the Security tab
 3. **Private Contact**: Reach out to [@3a7anton](https://github.com/3a7anton) directly
 
@@ -103,7 +103,7 @@ This policy does NOT cover:
 For any questions about this security policy, please contact:
 
 - **Project Maintainer**: [@3a7anton](https://github.com/3a7anton)
-- **Security Email**: [To be configured]
+- **Security Email**: [3a7anton@gmail.com](mailto:3a7anton@gmail.com)
 
 ---
 

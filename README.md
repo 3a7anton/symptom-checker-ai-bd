@@ -1,16 +1,3 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
 # 🩺 AI Symptom Checker & Health Tracker
 
 A modern, responsive web application that provides AI-powered symptom analysis and health tracking capabilities. Built with React, TypeScript, and Firebase, featuring a beautiful glassmorphism UI design.
@@ -59,8 +46,8 @@ A modern, responsive web application that provides AI-powered symptom analysis a
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/3a7anton/ai-symptom-checker.git
-   cd ai-symptom-checker
+   git clone https://github.com/3a7anton/symptom-checker-ai-bd.git
+   cd symptom-checker-ai-bd
    ```
 
 2. **Install dependencies**
@@ -244,7 +231,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **ABU AHAD ANTON**
 - GitHub: [@3a7anton](https://github.com/3a7anton)
-- Email: [your-email@example.com]
+- Email: [3a7anton@gmail.com](mailto:3a7anton@gmail.com)
 
 ## 🙏 Acknowledgments
 
@@ -258,9 +245,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/3a7anton/ai-symptom-checker/issues) page
+1. Check the [Issues](https://github.com/3a7anton/symptom-checker-ai-bd/issues) page
 2. Create a new issue with detailed information
-3. Join our [Discussions](https://github.com/3a7anton/ai-symptom-checker/discussions) for general questions
+3. Join our [Discussions](https://github.com/3a7anton/symptom-checker-ai-bd/discussions) for general questions
+
+## 🔒 Security
+
+If you discover a security vulnerability, please email [3a7anton@gmail.com](mailto:3a7anton@gmail.com) instead of using the issue tracker.
 
 ---
 
@@ -271,32 +262,3 @@ If you encounter any issues or have questions:
 ⭐ Star this repository if it helped you!
 
 </div>
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
